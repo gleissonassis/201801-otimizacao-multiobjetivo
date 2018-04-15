@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\begin{document}
+
+\title{Exercice 1 - Simplex implementation}
+\author{Gleisson de Assis}
+\maketitle{}
+
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    %emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},
+}
+
+\section{Introduction}
+This work solves the following problem:
+
+\begin{equation*}
+\begin{array}{ll@{}ll}
+\text{minimize}  & z = 80x_{1} + 60x_{2} &\\
+\text{subject to}& 0.20x_{1} + 0.32x_{2} \leq 0.25\\
+                 & x_{1} + x_{2} + x_{4} = 1
+\end{array}
+\end{equation*}
+
+\subsection{How it works}
+This problem is solved by running simplex2 implementation without specifing a
+feasible base. The function simplex2 calls simplex1 in order to find a feasible base,
+after that using the base found the function is called again solving
+problem.
+
+\subsection{Results}
+
+The optimum result for this problem is:
+
+\begin{equation*}
+\begin{array}{ll@{}ll}
+\text z = -119.0278 &\\
+\text x = [0, 14.1667, 2.6389, 5.0000] &\\
+\end{array}
+\end{equation*}
+
+\subsection{Input parameters}
+
+The simplxe2 implementation was configured as follow:
+
+\lstinputlisting{simplex2_test.m}
+
+\section{Source Code}
+\section*{simplex1.m}
+\lstinputlisting{simplex1.m}
+
+\section*{simplex2.m}
+\lstinputlisting{simplex2.m}
+
+\end{document}
