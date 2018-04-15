@@ -1,3 +1,6 @@
+%test problem
+%https://paginas.fe.up.pt/~mac/ensino/docs/MD20082009/MIEA_MD_TPC3TiagoPinto.pdf
+
 c = [2 -10 1 4 0 0 0];
 
 A = [ 3 6 0 3 1 0 0
