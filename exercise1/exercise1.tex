@@ -33,16 +33,18 @@ This work solves the following problem:
 
 \begin{equation*}
 \begin{array}{ll@{}ll}
-\text{minimize}  & z = 80x_{1} + 60x_{2} &\\
-\text{subject to}& 0.20x_{1} + 0.32x_{2} \leq 0.25\\
-                 & x_{1} + x_{2} + x_{4} = 1
+\text{minimize}  & z = 2x_{1} - 10x_{2} + x_{3} + 4x_{4} &\\
+\text{subject to}& 3x_{1} + 6x_{2}  3x_{4} \leq 100\\
+                 & 10_{4} + x_{2} + 6x_{3} \geq 50\\
+                 & -3x_{1} + x_{2} + 6x_{3} \geq 30\\
+                 & x \geq 0
 \end{array}
 \end{equation*}
 
 \subsection{How it works}
-This problem is solved by running simplex2 implementation without specifing a
+This problem is solved by running simplex2 implementation without specifying a
 feasible base. The function simplex2 calls simplex1 in order to find a feasible base,
-after that using the base found the function is called again solving
+after that using the found base the function is called again solving
 problem.
 
 \subsection{Results}
@@ -58,7 +60,7 @@ The optimum result for this problem is:
 
 \subsection{Input parameters}
 
-The simplxe2 implementation was configured as follow:
+The simplxe2 implementation was configured as follows:
 
 \lstinputlisting{simplex2_test.m}
 
